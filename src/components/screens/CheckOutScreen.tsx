@@ -24,8 +24,8 @@ const notify = () => toast("Congratulations...");
         <div>
             <h1 className='text-3xl'>{courseData && courseData.id}</h1>
         <img width={830} height={580} className=" rounded-lg mx-auto mt-3 mb-5" src={courseData && courseData.image} />
-        <button onClick={notify} className='btn mb-3 ml-2'>Confirm</button>
-        <ToastContainer/>
+        <Link to='/' onClick={notify} className='btn mb-3 ml-2'>Confirm</Link>
+        <ToastContainer toastStyle={{fontSize: '24px'}}/>
         </div>
     </div>
   )

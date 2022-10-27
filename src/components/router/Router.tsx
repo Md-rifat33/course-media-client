@@ -5,6 +5,7 @@ import Loader from '~/components/shared/Loader';
 import { useAuthState } from '../contexts/UserContext';
 import ProtectedRoute from './ProtectedRoute';
 import CheckOutScreen from '../screens/CheckOutScreen';
+import BlogsId from '../screens/BlogsId';
 
 const IndexScreen = lazy(() => import('~/components/screens/Index'));
 const CoursesScreen = lazy(() => import('~/components/screens/CoursesScreen'));
@@ -48,6 +49,10 @@ const InnerRouter = () => {
               <BlogsScreen />
             </ProtectedRoute>
           ),
+        },
+        {
+          path: 'blogs/:blogsId', 
+          element: <BlogsId/>
         },
         {
           path: 'checkout/:checkoutId',

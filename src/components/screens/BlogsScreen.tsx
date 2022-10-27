@@ -10,8 +10,6 @@ const BlogsScreen: React.FC = () => {
         <BlogCard />
         <BlogCard />
         <BlogCard />
-        <BlogCard />
-        <BlogCard />
       </div>
     </div>
   );
