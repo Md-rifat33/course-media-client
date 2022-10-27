@@ -1,4 +1,5 @@
 import { GoogleAuthProvider, signInWithRedirect } from 'firebase/auth';
+import NavBar from '~/layout/NavBar';
 import { useAuth } from '~/lib/firebase';
 
 export const SignInButton = () => {
@@ -12,8 +13,10 @@ export const SignInButton = () => {
   };
 
   return (
-    <button onClick={handleClick} type="button" className="btn btn-primary normal-case min-w-60">
+   <>
+      <button onClick={handleClick} type="button" className="btn btn-primary normal-case min-w-60">
       Sign In With Google
     </button>
+    </>
   );
 };

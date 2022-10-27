@@ -3,6 +3,7 @@ import { Link, useParams } from 'react-router-dom';
 import { Container } from '~/components/shared/Container';
 import PostMetaTitle from '~/components/shared/PostMetaTitle';
 import { fetchCourseBySlug } from '~/lib/services';
+import Pdf from '../root/Pdf';
 import Loader from '../shared/Loader';
 
 const lowercaseTitle = (title: string): string => {
@@ -24,6 +25,8 @@ const CourseScreen: React.FC = () => {
   }
   //@ts-ignore
   const { category, title, image, instructor, content, lastUpdated } = courseData;
+
+
   return (
     <Container>
       <div className="md:w-6/12 w-full mx-auto flex items-center flex-col">

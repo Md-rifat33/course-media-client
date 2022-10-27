@@ -16,12 +16,7 @@ const NavBar: React.FC = () => {
   };
 
   const handleLogin = () => {
-    const provider = new GoogleAuthProvider();
-    const auth = useAuth();
-    // @see https://firebase.google.com/docs/auth/web/google-signin
-    auth.languageCode = 'ja';
-
-    signInWithRedirect(auth, provider);
+    
   };
 
   useEffect(() => {
@@ -74,9 +69,9 @@ const NavBar: React.FC = () => {
             </ul>
           </div>
           {state.state === 'UNKNOWN' ? null : state.state === 'SIGNED_OUT' ? (
-            <a className="btn" onClick={handleLogin}>
+            <Link to='/login' className="btn" onClick={handleLogin}>
               Login
-            </a>
+            </Link>
           ) : (
             <div className="dropdown dropdown-end">
               <div className="tooltip tooltip-left" data-tip={state.currentUser.displayName}>

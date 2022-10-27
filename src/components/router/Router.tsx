@@ -6,6 +6,11 @@ import { useAuthState } from '../contexts/UserContext';
 import ProtectedRoute from './ProtectedRoute';
 import CheckOutScreen from '../screens/CheckOutScreen';
 import BlogsId from '../screens/BlogsId';
+import NavBar from '~/layout/NavBar';
+import { SignInButton } from '../domain/auth/SignInButton';
+import { SignInMethod } from 'firebase/auth';
+import SignInMethods from '../screens/SignInMethods';
+import RegisterScreen from '../screens/RegisterScreen';
 
 const IndexScreen = lazy(() => import('~/components/screens/Index'));
 const CoursesScreen = lazy(() => import('~/components/screens/CoursesScreen'));
@@ -34,6 +39,9 @@ const InnerRouter = () => {
           index: true,
           element: <IndexScreen />,
         },
+        {path: '/signin',
+       element: <SignInMethods/>,
+      },
         {
           path: 'courses',
           element: <CoursesScreen />,
@@ -63,6 +71,10 @@ const InnerRouter = () => {
         {
           path: 'login',
           element: <LoginScreen />,
+        },
+        {
+          path:'register', 
+          element:  <RegisterScreen/>
         },
         {
           path: '*',

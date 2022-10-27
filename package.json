@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@headlessui/react": "^1.7.3",
+    "@react-pdf/renderer": "^3.0.0",
     "daisyui": "^2.33.0",
     "firebase": "^9.12.1",
     "leaflet": "^1.9.2",
