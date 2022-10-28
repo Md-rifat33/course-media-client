@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import CourseCard from '~/components/shared/CourseCard';
-import { fetchCourseBySlug, fetchCourses } from '~/lib/services';
+import {  fetchCourses } from '~/lib/services';
 
 const PopularCourse: React.FC = () => {
   const [courses, setCourses] = useState<Object | null>(null);

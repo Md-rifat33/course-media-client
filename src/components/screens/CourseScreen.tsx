@@ -5,7 +5,6 @@ import PostMetaTitle from '~/components/shared/PostMetaTitle';
 import { fetchCourseBySlug } from '~/lib/services';
 import Loader from '../shared/Loader';
 import ReactDOM from "react-dom";
-import Pdf from "react-to-pdf";
 
 const lowercaseTitle = (title: string): string => {
   const splittedTitle = title.split(' ');
@@ -19,8 +18,11 @@ const CourseScreen: React.FC = () => {
   const [courseData, setCourseData] = useState<Object | undefined>(undefined);
   const { courseId } = useParams();
   useEffect(() => {
-    const data = fetchCourseBySlug(`course/${courseId}`);
+    const getData = async () => {
+      const data = await fetchCourseBySlug(`course/${courseId}`);
     setCourseData(data);
+    }
+    getData()
   }, []);
 
   if (!courseData) {

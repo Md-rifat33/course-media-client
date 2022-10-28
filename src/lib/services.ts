@@ -480,13 +480,15 @@ export const fetchCourses = (): Promise<Object> => {
  * Fetch courses data
  */
 export const fetchCourseBySlug = (slug: string): {} | undefined => {
-  const courseData = data.data.results.find((item) => item.slug.includes(slug));
-  return courseData;
+  return fetch(`http://localhost:4000/api/course?slug=${slug}`)
+ .then(res => res.json())
+ .then(data => data)
 };
 /**
  * Fetch courses data
  */
 export const fetchCourseById = (id: string): {} | undefined => {
-  const courseData = data.data.results.find((item) => item.id.includes(id));
-  return courseData;
+   return fetch(`http://localhost:4000/api/course?slug=${id}`)
+ .then(res => res.json())
+ .then(data => data)
 };

@@ -10,8 +10,11 @@ const CheckOutScreen:React.FC = () => {
     const [courseData, setCourseData] = useState<undefined | Object>(undefined)
       const { checkoutId } = useParams();
     useEffect(() => {
-      const data = fetchCourseById(checkoutId as string)
+     const getData =async () => {
+       const data = fetchCourseById(checkoutId as string)
     setCourseData(data)
+     }
+     getData()
     }, [])
 
     useEffect(() => {
