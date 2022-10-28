@@ -1,12 +1,11 @@
-import { createUserWithEmailAndPassword, getAuth } from 'firebase/auth'
+import { createUserWithEmailAndPassword, getAuth, sendEmailVerification, updateProfile } from 'firebase/auth'
 import React from 'react'
-import toast from 'react-hot-toast'
 import { Link } from 'react-router-dom'
 
 
 
 const RegisterScreen:React.FC = () => {
-    const auth= getAuth()
+const auth = getAuth()
   const handleRegister = (event) => {
     event.preventDefault()
     const form = event.target
@@ -18,12 +17,33 @@ const RegisterScreen:React.FC = () => {
     .then(result => {
         const user = result.user
         console.log(user)
+        form.reset()
+        verifyEmail()
+        updateUserName(name)
     })
     .catch(error => {
         console.error(error)
         alert(error.message)
     })
   }
+
+const verifyEmail = () =>  {
+    sendEmailVerification(auth.currentUser)
+    .then(() => {
+        alert('Please Check Your Email and verify')
+    })
+}
+ const updateUserName = (name) => {
+    updateProfile(auth.currentUser, {
+        displayName: name
+    })
+    .then(() => {
+        alert('display name updated')
+    })
+    .catch(error => {
+        console.error(error)
+    })
+ }
   return (
    <div className="hero min-h-screen bg-base-200">
       <form onSubmit={handleRegister} className="hero-content flex-col lg:flex-row-reverse">
@@ -63,6 +83,7 @@ const RegisterScreen:React.FC = () => {
             <div className="form-control mt-6">
               <button type='submit' className="btn btn-dark">Register</button>
             </div>
+            <p>Already have an account.Please <Link className='link' to='/login'>Login</Link></p>
           </div>
         </div>
       </form>

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import {Head} from "~/components/shared/Head";
 
 function Page404() {
@@ -11,12 +12,12 @@ function Page404() {
               The page is not found.
             </h1>
             <div className='mt-4'>
-              <a href='/' className='link-primary'>Top Page</a>
+              <Link to='/' className='link-primary'>Top Page</Link>
             </div>
           </div>
         </div>
       </div>
-    </>
+    </> 
   )
 }
 
