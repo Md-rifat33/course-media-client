@@ -11,9 +11,7 @@ const PopularCourse: React.FC = () => {
     setCourses(data);
   }, []);
 
-  const handleClick = () => {
-    fetchCourseBySlug
-  }
+  
 
   return (
     <div className="pt-32">
