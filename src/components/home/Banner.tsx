@@ -9,11 +9,8 @@ const Banner: React.FC = () => {
         <div className="max-w-md">
           <h1 className="mb-5 text-5xl font-bold">World No 1 Online Best Courses Platform</h1>
           <p className="mb-5 text-xl">
-            WHAT WOULD YOU LEARN? Increase your expertise in business, technology and personal development. Lorem ipsum
-            dolor sit amet consectetur adipisicing elit. Accusamus, maiores aspernatur rerum modi officiis consectetur,
-            voluptas, natus ipsum quos impedit perspiciatis. Dignissimos quia est provident laudantium illo, temporibus
-            exercitationem voluptas sed dolorem impedit obcaecati officia aperiam veritatis ab? Doloremque quos quaerat
-            iste, libero laudantium similique sequi sunt hic veniam iusto?
+            WHAT WOULD YOU LEARN? Increase your expertise in business, technology and personal development. You can develop new skills and achieving their goals by learning from the extensive library of various courses. Subjects that are available in Udemy are taught by expert instructions.
+            The outline of courses can be viewed on all devices connected to the internet. You do not require any prequalification to take any course.
           </p>
           <button className="btn btn-primary">Get Started</button>
         </div>
