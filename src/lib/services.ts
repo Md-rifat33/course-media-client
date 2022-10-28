@@ -473,6 +473,9 @@ export const fetchCourses = (): Promise<Object> => {
  .then(data => data)
 };
 
+
+
+
 /**
  * Fetch courses data
  */
