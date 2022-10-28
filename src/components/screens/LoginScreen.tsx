@@ -27,7 +27,7 @@ const LoginScreen: React.FC = () => {
   }
 
   const handleSubmit = (event) => {
-    const auth = getAuth()
+    const auth = useAuth()
     event.preventDefault()
     const form = event.target
     const email = form.email.value

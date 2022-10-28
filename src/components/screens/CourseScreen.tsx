@@ -3,14 +3,17 @@ import { Link, useParams } from 'react-router-dom';
 import { Container } from '~/components/shared/Container';
 import PostMetaTitle from '~/components/shared/PostMetaTitle';
 import { fetchCourseBySlug } from '~/lib/services';
-import Pdf from '../root/Pdf';
 import Loader from '../shared/Loader';
+import ReactDOM from "react-dom";
+import Pdf from "react-to-pdf";
 
 const lowercaseTitle = (title: string): string => {
   const splittedTitle = title.split(' ');
   const lCaseTitle = splittedTitle.map((item) => item.toLowerCase());
   return lCaseTitle.join(' ');
 };
+
+const ref = React.createRef();
 
 const CourseScreen: React.FC = () => {
   const [courseData, setCourseData] = useState<Object | undefined>(undefined);
@@ -26,9 +29,10 @@ const CourseScreen: React.FC = () => {
   //@ts-ignore
   const { category, title, image, instructor, content, lastUpdated } = courseData;
 
-
+<button className="text-lg btn">Download</button>
   return (
-    <Container>
+   <div ref={ref}>
+     <Container>
       <div className="md:w-6/12 w-full mx-auto flex items-center flex-col">
         <PostMetaTitle category={category} title={title} isShowLink={false} center slug="/" />
       </div>
@@ -40,7 +44,10 @@ const CourseScreen: React.FC = () => {
       </p>
 
       <div className="w-full text-center mb-4 mt-8">
-        <button className="text-lg btn">Download</button>{' '}
+          <Pdf targetRef={ref} filename="code-example.pdf">
+        {({ toPdf }) => <button onClick={toPdf} className="text-lg btn">Download</button>}
+      </Pdf>
+        {' '}
       </div>
 
       {content?.description ? (
@@ -99,6 +106,7 @@ const CourseScreen: React.FC = () => {
         <Link to={`/checkout/${courseData.id}`} className="text-lg btn">Get premium access</Link>{' '}
       </div>
     </Container>
+   </div>
   );
 };
 

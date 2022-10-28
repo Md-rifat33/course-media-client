@@ -1,11 +1,12 @@
 import { createUserWithEmailAndPassword, getAuth, sendEmailVerification, updateProfile } from 'firebase/auth'
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { useAuth } from '~/lib/firebase'
 
 
 
 const RegisterScreen:React.FC = () => {
-const auth = getAuth()
+const auth = useAuth()
   const handleRegister = (event) => {
     event.preventDefault()
     const form = event.target
