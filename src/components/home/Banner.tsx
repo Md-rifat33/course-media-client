@@ -11,7 +11,7 @@ const Banner: React.FC = () => {
           <p className="mb-5 text-xl">
             WHAT WOULD YOU LEARN? Increase your expertise in business, technology and personal development. You can develop new skills and achieving their goals by learning from the extensive library of various courses. Subjects that are available in Udemy are taught by expert instructions.
             The outline of courses can be viewed on all devices connected to the internet. You do not require any prequalification to take any course.
-            We are trying to give you a best lesson.
+            We are trying to give you a best lesson.Thank you.
           </p>
 
           <button className="btn btn-primary">Get Started</button>
