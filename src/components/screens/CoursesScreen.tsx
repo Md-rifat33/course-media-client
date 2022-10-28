@@ -6,13 +6,14 @@ const CoursesScreen: React.FC = () => {
   const [courses, setCourses] = useState<Object | null>(null);
   useEffect(() => {
     async function getdata():Promise<void>{
-      const data =  fetchCourses(
-
-      )
+      const data =  fetchCourses()
     setCourses(data);
     }
     getdata()
-  }, []);
+  }, [])
+
+  
+
 
   return (
     <div className="min-h-screen bg-base-200 flex w-full px-5 flex-col md:flex-row">

@@ -6,8 +6,7 @@ import { fetchCourseBySlug, fetchCourses } from '~/lib/services';
 const PopularCourse: React.FC = () => {
   const [courses, setCourses] = useState<Object | null>(null);
   useEffect(() => {
-    const data = fetchCourses(
-    );
+    const data = fetchCourses();
     setCourses(data);
   }, []);
 
