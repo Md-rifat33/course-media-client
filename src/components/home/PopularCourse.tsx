@@ -1,14 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import CourseCard from '~/components/shared/CourseCard';
-import { fetchCourses } from '~/lib/services';
+import { fetchCourseBySlug, fetchCourses } from '~/lib/services';
 
 const PopularCourse: React.FC = () => {
   const [courses, setCourses] = useState<Object | null>(null);
   useEffect(() => {
-    const data = fetchCourses();
+    const data = fetchCourses(
+    );
     setCourses(data);
   }, []);
+
+  const handleClick = () => {
+    fetchCourseBySlug
+  }
+
   return (
     <div className="pt-32">
       <h1 className="text-center text-4xl">Popular Courses</h1>
@@ -18,7 +24,7 @@ const PopularCourse: React.FC = () => {
         {courses?.data?.results?.map((item, i) => {
           if (i < 4) {
             return (
-              <CourseCard
+              <CourseCard key={item.id}
                 title={item.title}
                 image={item.image}
                 description={item.description}

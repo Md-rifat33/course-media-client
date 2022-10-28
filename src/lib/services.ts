@@ -467,8 +467,10 @@ const data = {
 /**
  * Fetch courses data
  */
-export const fetchCourses = (): Object => {
-  return data;
+export const fetchCourses = (): Promise<Object> => {
+ return fetch('http://localhost:4000/api/course')
+ .then(res => res.json())
+ .then(data => data)
 };
 
 /**
