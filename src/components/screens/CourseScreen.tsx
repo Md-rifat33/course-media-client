@@ -5,6 +5,7 @@ import PostMetaTitle from '~/components/shared/PostMetaTitle';
 import { fetchCourseBySlug } from '~/lib/services';
 import Loader from '../shared/Loader';
 import ReactDOM from "react-dom";
+import Pdf from 'react-to-pdf'
 
 const lowercaseTitle = (title: string): string => {
   const splittedTitle = title.split(' ');

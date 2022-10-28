@@ -5,14 +5,14 @@ import { fetchCourses } from '~/lib/services';
 const CoursesScreen: React.FC = () => {
   const [courses, setCourses] = useState<Object | null>(null);
   useEffect(() => {
-    async function getdata():Promise<void>{
-      const data =  fetchCourses()
+    async function getdata(){
+      const data = await fetchCourses()
     setCourses(data);
     }
     getdata()
   }, [])
 
-  
+
 
 
   return (
