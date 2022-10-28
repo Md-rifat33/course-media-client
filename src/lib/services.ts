@@ -468,7 +468,7 @@ const data = {
  * Fetch courses data
  */
 export const fetchCourses = (): Promise<Object> => {
- return fetch('http://localhost:4000/api/course')
+ return fetch(`${import.meta.env.VITE_API_URL}/api/course`)
  .then(res => res.json())
  .then(data => data)
 };
@@ -480,7 +480,7 @@ export const fetchCourses = (): Promise<Object> => {
  * Fetch courses data
  */
 export const fetchCourseBySlug = (slug: string): {} | undefined => {
-  return fetch(`http://localhost:4000/api/course?slug=${slug}`)
+  return fetch(`${import.meta.env.VITE_API_URL}/api/course?slug=${slug}`)
  .then(res => res.json())
  .then(data => data)
 };
@@ -488,7 +488,7 @@ export const fetchCourseBySlug = (slug: string): {} | undefined => {
  * Fetch courses data
  */
 export const fetchCourseById = (id: string): {} | undefined => {
-   return fetch(`http://localhost:4000/api/course?slug=${id}`)
+   return fetch(`${import.meta.env.VITE_API_URL}/api/course?slug=${id}`)
  .then(res => res.json())
  .then(data => data)
 };
